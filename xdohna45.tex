@@ -157,4 +157,74 @@
 	I_{R_1} = I_i\doteq0.0554714\text{A}\\
 	U_{R_1} = I_{R_1}R_1 = 0.0554714\cdot150\doteq8.32071\text{V}
 \end{gather*}
+\pagebreak
+\section{Příklad (B)}
+\Large{Zadání:} \\
+	$U = 150 \text{V}$ \\
+	$I_1 = 0.7\text{A}\;I_2 = 0.8\text{A}$\\
+	$R_1 = 49 \Omega \; R_2 = 45 \Omega \; R_3 = 61 \Omega \;
+	R_4 = 34 \Omega \\ R_5 = 34 \Omega $\\
+	$U_{R_3} = \: \text{?}$ \\
+	$I_{R_3} = \: \text{?}$ \\
+		\begin{figure}[H]
+		\center\includegraphics[width=0.6\linewidth]{img9.pdf}
+		\caption*{Přepočítáme napěťový zdroj $U$ na proudový zdroj $I_3$}
+\end{figure}
+{\Large Řešení (Metoda uzlových napětí):}\\
+\begin{gather*}
+	I_3 = \frac{U}{R_1}=\frac{150}{49}\doteq3.0612\text{A}
+\end{gather*}
+Sestavíme rovnice pro jednotlivé uzly:
+\begin{eqnarray*}
+-I_1+I_3-\frac{U_A}{R_1}-\frac{U_A}{R_2}-\frac{U_A-U_B}{R_3} = 0\\
+I_1+I_2+\frac{U_A-U_B}{R_3}-\frac{U_B-U_C}{R4} = 0\\
+-I_2+\frac{U_B-U_C}{R_4}-\frac{U_C}{R_5	}=0
+\end{eqnarray*}
+Dosadíme do rovnic:
+\begin{eqnarray*}
+-0.7+3.0612-\frac{U_A}{49}-\frac{U_A}{45}-\frac{U_A-U_B}{61}=0\\
+0.7+0.8+\frac{U_A-U_B}{61}-\frac{U_B-U_C}{34} = 0\\
+-0.8+\frac{U_B-U_C}{34}-\frac{U_C}{34}=0
+\end{eqnarray*}
+Upravíme:
+\begin{eqnarray*}
+-3969500U_A + 1102500U_B &=& -158796603\\
+34U_A - 95U_B + 61U_C &=& -3111\\
+5U_B-10U_C &=& 136
+\end{eqnarray*}
+Vypočítáme:
+$$U_A=\frac{158796603}{3969500}+\frac{2205}{7939}U_B\\$$
+\begin{eqnarray*}
+34(\frac{158796603}{3969500}+\frac{2205}{7939}U_B)-95U_B+61U_C &=& -3111\\
+5U_B - 10U_C &=& 136\\\\
+-9988750U_B+7121750U_C &=& -522005853\\
+5U_B - 10U_C &=&136\\\\
+-9988750U_B+7121750U_C &=& -522005853\\
+9988750U_B-19977500U_C &=& 271964000\\\\
+-12855750U_C &=& -250311853\\\\
+U_C &=& \frac{4103473}{210750}\\[1cm]
+5U_B-10\frac{4103473}{210750} &=&136\\
+U_B &=& \frac{6969673}{105375}\\[1cm]
+U_A = \frac{158796603}{3969500}+\frac{2205}{7939}\cdot\frac{6969673}{105375}\\
+U_A &=& \frac{139427589}{2388500}\\[1cm]
+U_A &\doteq& 58.3745\text{V}\\
+U_B &\doteq& 66.1416\text{V}\\
+U_C &\doteq& 19.4708 \text{V}
+\end{eqnarray*}
+Pomocí $U_A$ a $U_B$ vypočítáme napětí na $U_{R_3}$:
+\begin{gather*}
+U_{R_3} = U_B-U_A = \frac{6969673}{105375}-\frac{139427589}{2388500}=\frac{55654997}{7165500} \doteq 7.76708\text{V}\\\\
+I_{R_3} = \frac{U_{R_3}}{R_3}=\frac{\frac{55654997}{7165500}}{61}=\frac{912377}{7165500}\doteq0.127329\text{A}
+\end{gather*}
+\pagebreak
+\section*{Tabulka výsledků}
+\begin{table}[H]
+\begin{tabular}{|c|c|l|}
+\hline
+Příklad & Varianta & \multicolumn{1}{c|}{Výsledek}                                                                                          \\ \hline
+1       & B        & \begin{tabular}[c]{@{}l@{}}$I_{R_3} = 0.2126\text{A}=212.6\text{mA}$\\ $U_{R_3} = 72.288836\text{V}$\end{tabular}                     \\ \hline
+2       & E        & \begin{tabular}[c]{@{}l@{}}$I_{R_1}=0.0554714\text{A} = 55.4714\text{mA}$\\ $U_{R_1}=8.32071\text{V}$\end{tabular} \\ \hline
+3       & B        & \begin{tabular}[c]{@{}l@{}}$I_{R_3}=0.127329\text{A} = 127.329\text{mA}$\\ $U_{R_3}=7.76708\text{V}$\end{tabular}      \\ \hline
+\end{tabular}
+\end{table}
 \end{document}
